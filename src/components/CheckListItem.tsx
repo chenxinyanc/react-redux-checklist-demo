@@ -15,7 +15,10 @@ export const CheckListItem: React.FC<CheckListItemProps> = (props) => {
     const { item } = props;
     const [isEditing, setIsEditing] = React.useState(false);
     const [edits, setEdits] = React.useState<Partial<CheckListItemState>>({});
-    return (<Stack className={classes.checkListItem} key={item.id} horizontal data-is-focusable>
+    return (<Stack
+        key={item.id}
+        className={classNames(classes.checkListItem, item.isDone && classes.done)}
+        horizontal data-is-focusable>
         {
             isEditing
                 ? (

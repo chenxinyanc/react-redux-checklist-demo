@@ -37,7 +37,10 @@ export type CheckListAction = AddItemAction | RemoveItemAction | EditItemAction 
 // https://redux.js.org/basics/actions#action-creators
 // Action creators can also be asynchronous and have side-effects.
 
-export function addItem(item: CheckListItemState): AddItemAction {
+export function addItem(item: CheckListItemState | Omit<CheckListItemState, 'id'>): AddItemAction {
+    if (!('id' in item)) {
+        item = { ...item, id: (Date.now() * 1000 + Math.round(Math.random() * 1000)).toString(36) };
+    }
     return { type: ActionType.ADD_ITEM, item };
 }
 

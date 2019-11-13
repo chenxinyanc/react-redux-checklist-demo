@@ -24,4 +24,15 @@
         }
     }
 
+    &.done {
+        .title {
+            text-decoration: line-through;
+            color: #999999;
+        }
+
+        .due {
+            text-decoration: line-through;
+        }
+    }
+
 }
