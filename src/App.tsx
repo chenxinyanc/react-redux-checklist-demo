@@ -19,5 +19,5 @@ export const App: React.FC = () => {
                 <CheckList />
             </Customizer>
         </Provider>);
-}
-App.displayName = "App";
+};
+App.displayName = 'App';

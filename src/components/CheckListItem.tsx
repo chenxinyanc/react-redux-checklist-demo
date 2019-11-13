@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import moment from 'moment';
-import { CommandBarButton, Stack, TextField, DatePicker } from 'office-ui-fabric-react';
+import { CommandBarButton, DatePicker, Stack, TextField } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { CheckListItemState } from '../state/types';
 import classes from './CheckListItem.scss';
 
 export interface CheckListItemProps {
-    item: CheckListItemState
+    item: CheckListItemState;
     onAcceptChanges: (change: Readonly<Partial<CheckListItemState> & Pick<CheckListItemState, 'id'>>) => void;
     viewOperationArea?: React.ReactNode;
 }
@@ -27,11 +27,11 @@ export const CheckListItem: React.FC<CheckListItemProps> = (props) => {
                             <TextField
                                 value={edits.title ?? item.title}
                                 onChange={(e, n) => setEdits({ ...edits, title: n })}
-                                label="Title"
+                                label='Title'
                             />
                         </Stack.Item>
                         <DatePicker
-                            label="Due"
+                            label='Due'
                             value={edits.due ?? item.due}
                             onSelectDate={(d) => d && setEdits({ ...edits, due: d })}
                         />
@@ -56,5 +56,5 @@ export const CheckListItem: React.FC<CheckListItemProps> = (props) => {
                 )
         }
     </Stack>);
-}
+};
 CheckListItem.displayName = 'CheckListItem';

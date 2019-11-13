@@ -1,5 +1,5 @@
+import { ActionType, CheckListAction } from './actions';
 import { CheckListState, INITIAL_CHECKLIST } from './types';
-import { CheckListAction, ActionType } from './actions';
 
 // https://redux.js.org/basics/reducers#handling-actions
 // The reducer is a pure function that takes the previous state and an action, and returns the next state.
@@ -34,7 +34,7 @@ export function checklistReducer(state: Readonly<CheckListState> | undefined, ac
                 return {
                     ...state,
                     items
-                }
+                };
             }
             break;
         case ActionType.EDIT_ITEM:
@@ -47,7 +47,7 @@ export function checklistReducer(state: Readonly<CheckListState> | undefined, ac
                 return {
                     ...state,
                     items
-                }
+                };
             }
             break;
         case ActionType.SET_ITEMS:
@@ -56,7 +56,7 @@ export function checklistReducer(state: Readonly<CheckListState> | undefined, ac
                     ...state,
                     // Make deep clone if necessary.
                     items: [...action.items]
-                }
+                };
             }
             break;
         default:

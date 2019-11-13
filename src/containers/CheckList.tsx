@@ -1,10 +1,10 @@
+import { CommandBarButton, FocusZone, PrimaryButton } from 'office-ui-fabric-react';
 import * as React from 'react';
-import { CheckListItemState, CheckListState } from '../state/types';
-import { List, FocusZone, CommandBarButton, PrimaryButton } from 'office-ui-fabric-react';
-import { connect, MapDispatchToProps } from 'react-redux';
-import { CheckListItem } from '../components/CheckListItem';
-import { CheckListAction, editItem, removeItem, addItem } from '../state/actions';
+import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { CheckListItem } from '../components/CheckListItem';
+import { addItem, CheckListAction, editItem, removeItem } from '../state/actions';
+import { CheckListItemState, CheckListState } from '../state/types';
 
 export interface CheckListOwnProps {
 
@@ -30,7 +30,7 @@ function mapDispatchToProps(dispatch: Dispatch<CheckListAction>): CheckListDispa
         onAddItem() { dispatch(addItem({ title: 'New item', isDone: false })); },
         onEditItem(change) { dispatch(editItem(change)); },
         onRemoveItem(change) { dispatch(removeItem(change)); }
-    }
+    };
 }
 
 export class CheckListBase extends React.PureComponent<CheckListOwnProps & CheckListStateProps & CheckListDispatchProps> {
@@ -52,7 +52,7 @@ export class CheckListBase extends React.PureComponent<CheckListOwnProps & Check
                     }} />
                 </>
             }
-        />
+        />;
     }
 
     public render() {
