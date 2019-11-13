@@ -1,0 +1,27 @@
+.check-list-item {
+
+    padding: 0.25em;
+
+    &:focus {
+        background-color: #99ccff;
+        outline: 1px solid;
+    }
+
+    &:hover {
+        background-color: #cceeff;
+    }
+
+    .title {
+        font-variant-caps: small-caps;
+    }
+
+    .due {
+        flex-basis: 0;
+        font-size: smaller;
+
+        &.no-due {
+            color: #999999;
+        }
+    }
+
+}
