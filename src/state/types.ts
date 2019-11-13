@@ -5,7 +5,7 @@
 // We suggest that you keep your state as normalized as possible, without any nesting.
 // Keep every entity in an object stored with an ID as a key, and use IDs to reference it from other entities, or lists.
 
-export interface CheckListItem {
+export interface CheckListItemState {
     id: string;
     title: string;
     due?: Date;
@@ -14,7 +14,7 @@ export interface CheckListItem {
 
 // This is the root object of our state.
 export interface CheckListState {
-    items: CheckListItem[];
+    items: CheckListItemState[];
 }
 
 export const INITIAL_CHECKLIST: CheckListState = {

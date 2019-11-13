@@ -1,4 +1,4 @@
-import { CheckListItem } from './types';
+import { CheckListItemState } from './types';
 
 // Action names
 
@@ -13,7 +13,7 @@ export enum ActionType {
 
 export interface AddItemAction {
     type: ActionType.ADD_ITEM;
-    item: Readonly<CheckListItem>;
+    item: Readonly<CheckListItemState>;
 }
 
 export interface RemoveItemAction {
@@ -23,12 +23,12 @@ export interface RemoveItemAction {
 
 export interface EditItemAction {
     type: ActionType.EDIT_ITEM;
-    item: Readonly<Partial<CheckListItem> & Pick<CheckListItem, "id">>;
+    item: Readonly<Partial<CheckListItemState> & Pick<CheckListItemState, "id">>;
 }
 
 export interface SetItemsAction {
     type: ActionType.SET_ITEMS;
-    items: Iterable<Readonly<CheckListItem>>;
+    items: Iterable<Readonly<CheckListItemState>>;
 }
 
 export type CheckListAction = AddItemAction | RemoveItemAction | EditItemAction | SetItemsAction;
@@ -37,7 +37,7 @@ export type CheckListAction = AddItemAction | RemoveItemAction | EditItemAction 
 // https://redux.js.org/basics/actions#action-creators
 // Action creators can also be asynchronous and have side-effects.
 
-export function addItem(item: CheckListItem): AddItemAction {
+export function addItem(item: CheckListItemState): AddItemAction {
     return { type: ActionType.ADD_ITEM, item };
 }
 
@@ -49,7 +49,7 @@ export function editItem(item: EditItemAction['item']): EditItemAction {
     return { type: ActionType.EDIT_ITEM, item };
 }
 
-export function setItems(items: Iterable<Readonly<CheckListItem>>): SetItemsAction {
+export function setItems(items: Iterable<Readonly<CheckListItemState>>): SetItemsAction {
     return { type: ActionType.SET_ITEMS, items };
 }
 

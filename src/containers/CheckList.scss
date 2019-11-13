@@ -1,0 +1,16 @@
+.check-list-item {
+
+    display: flex;
+    flex-direction: row;
+    padding: 0.25em;
+
+    .title {
+        font-variant-caps: small-caps;
+        flex-grow: 0.8;
+    }
+
+    .due {
+        flex-basis: 0;
+        flex-grow: 0.2;
+    }
+}
