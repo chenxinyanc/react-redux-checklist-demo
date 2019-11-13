@@ -13,10 +13,27 @@ export interface CheckListItem {
 }
 
 // This is the root object of our state.
-export interface CheckList {
+export interface CheckListState {
     items: CheckListItem[];
 }
 
-export const INITIAL_CHECKLIST: CheckList = {
-    items: []
+export const INITIAL_CHECKLIST: CheckListState = {
+    items: [
+        {
+            id: "initial1",
+            title: "Initial item 1",
+            isDone: false
+        },
+        {
+            id: "initial2",
+            title: "Initial item 2",
+            due: new Date(),
+            isDone: false
+        },
+        {
+            id: "initial3",
+            title: "Initial item 3",
+            isDone: true
+        },
+    ]
 };

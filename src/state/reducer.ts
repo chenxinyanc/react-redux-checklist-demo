@@ -1,4 +1,4 @@
-import { CheckList, INITIAL_CHECKLIST } from './types';
+import { CheckListState, INITIAL_CHECKLIST } from './types';
 import { CheckListAction, ActionType } from './actions';
 
 // https://redux.js.org/basics/reducers#handling-actions
@@ -8,7 +8,7 @@ import { CheckListAction, ActionType } from './actions';
 // It seems that throwing Error in Reducer is not recommended.
 // Still, we can use assertion or telemetry to tell if the action dispatcher has made some foundamental mistake.
 
-export function checklistReducer(state: Readonly<CheckList> | undefined, action: CheckListAction): CheckList {
+export function checklistReducer(state: Readonly<CheckListState> | undefined, action: CheckListAction): CheckListState {
     state = state ?? INITIAL_CHECKLIST;
     switch (action.type) {
         case ActionType.ADD_ITEM:
@@ -60,7 +60,7 @@ export function checklistReducer(state: Readonly<CheckList> | undefined, action:
             }
             break;
         default:
-            console.error("Invalid action.", action);
+            // Handle unknown action by returning unchanged state.
             return state;
     }
 }

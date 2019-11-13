@@ -3,10 +3,10 @@ import { CheckListItem } from './types';
 // Action names
 
 export enum ActionType {
-    ADD_ITEM = "ADD_ITEM",
-    EDIT_ITEM = "EDIT_ITEM",
-    REMOVE_ITEM = "REMOVE_ITEM",
-    SET_ITEMS = "SET_ITEMS"
+    ADD_ITEM = "CheckList/ADD_ITEM",
+    EDIT_ITEM = "CheckList/EDIT_ITEM",
+    REMOVE_ITEM = "CheckList/REMOVE_ITEM",
+    SET_ITEMS = "CheckList/SET_ITEMS"
 }
 
 // Action data structures.
