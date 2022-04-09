@@ -16,7 +16,7 @@
     "@types/moment": "^2.13.0",
     "@uifabric/azure-themes": "^7.0.10",
     "classnames": "^2.2.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "office-ui-fabric-react": "^7.59.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
